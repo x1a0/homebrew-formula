@@ -8,6 +8,7 @@ class TinyfugueRebirth < Formula
   depends_on "libnet"
   depends_on "openssl"
   depends_on "pcre++"
+  depends_on "python"
 
   patch :DATA
 
@@ -15,7 +16,8 @@ class TinyfugueRebirth < Formula
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-getaddrinfo",
-                          "--enable-termcap=ncurses"
+                          "--enable-termcap=ncurses",
+                          "--enable-python"
     system "make", "install"
   end
 end
